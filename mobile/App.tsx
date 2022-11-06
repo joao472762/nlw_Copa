@@ -6,8 +6,12 @@ import {
   Roboto_500Medium,
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
-import { Loading } from './src/components/loading';
+import { Loading } from './src/components/Loading';
 import { SignIn } from './src/screens/SignIn';
+import { AuthContext, AuthContextProvider } from "./src/context/AuthContext";
+import { New } from "./src/screens/New";
+import { Find } from "./src/screens/Find";
+import { Pools } from "./src/screens/Pools";
 
 
 export default function App() {
@@ -24,8 +28,9 @@ export default function App() {
         barStyle="light-content" 
         backgroundColor={'transparent'}  
       />
-      
-      { fontsIsLoaded ? <SignIn/> : <Loading/> }
+      <AuthContextProvider>
+        { fontsIsLoaded ? <Pools/> : <Loading/> }
+      </AuthContextProvider>
 
     </NativeBaseProvider>
   );

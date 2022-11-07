@@ -1,11 +1,13 @@
-import { Center, Icon, Text} from "native-base";
+import { Center, Icon, Spinner, Text} from "native-base";
 import NlwLogoImg from '../assets/logo.svg'
 import { Button } from "../components/Buttton";
 import {Fontisto} from '@expo/vector-icons'
 import { useAuth } from "../hooks/useAuth";
 
 export function  SignIn(){
-    const {signIn} = useAuth()
+    const {signIn, isUserLoading} = useAuth()
+
+    const buttonIsDisabled  = isUserLoading
     
     return (
         <Center flex={1} background={'gray.900'} paddingX='7'>
@@ -15,7 +17,12 @@ export function  SignIn(){
                 title="entrar com o google"
                 type="SECUNDARY"
                 onPress={signIn}
-                leftIcon={<Icon as={Fontisto} name='google' color='white' size='md'/>}
+                disabled={buttonIsDisabled}
+                isLoading={buttonIsDisabled}
+                _loading={{_spinner: {color: 'white'}}}
+                leftIcon={<Icon as={Fontisto} name='google' color='white' size='md'/>
+                
+            }
             />
             <Text
                 color='gray.200'

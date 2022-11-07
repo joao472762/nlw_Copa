@@ -4,8 +4,10 @@ import NlwLogoImg from '../assets/logo.svg'
 import { Input } from "../components/Input";
 import { Header } from "../components/Header";
 import { Button } from "../components/Buttton";
+import { useAuth } from "../hooks/useAuth";
 
 export function New(){
+    const {user}  = useAuth()
     return(
         <VStack flex={1} bg='gray.900'>
             <Header  title="Buscar por código"/>
@@ -13,7 +15,7 @@ export function New(){
                 <NlwLogoImg/>
                 <Heading fontSize={'xl'} textAlign='center' fontFamily='heading' color='white' my={8}>
                     Crie seu próprio bolão da copa
-                    e compartilhe entre amigos!
+                    e compartilhe entre amigos! {user.name}
                 </Heading>
 
                 <Input

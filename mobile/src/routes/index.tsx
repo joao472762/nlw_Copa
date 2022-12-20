@@ -8,7 +8,7 @@ export {NavigationContainer} from '@react-navigation/native'
 
 export function Routes(){
     const {user}  = useAuth()
-    console.log(user)
+
     return (
         <Box flex={1} color='gray.900'>
 

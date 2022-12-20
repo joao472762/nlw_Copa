@@ -1,8 +1,9 @@
+import {Fontisto} from '@expo/vector-icons';
 import { Center, Icon, Spinner, Text} from "native-base";
-import NlwLogoImg from '../assets/logo.svg'
-import { Button } from "../components/Buttton";
-import {Fontisto} from '@expo/vector-icons'
+
 import { useAuth } from "../hooks/useAuth";
+import NlwLogoImg from '../assets/logo.svg';
+import { Button } from "../components/Buttton";
 
 export function  SignIn(){
     const {signIn, isUserLoading} = useAuth()

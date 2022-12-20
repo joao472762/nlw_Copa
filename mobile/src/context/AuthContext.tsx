@@ -1,7 +1,8 @@
-import { createContext, ReactNode, useState, useEffect } from "react"
-import * as AuthSession from 'expo-auth-session'
-import * as Google from 'expo-auth-session/providers/google'
 import * as WebBrowser from 'expo-web-browser'
+import * as AuthSession from 'expo-auth-session'
+import * as Google from 'expo-auth-session/providers/google'    
+import { createContext, ReactNode, useState, useEffect } from "react"
+
 import { api } from "../services/api"
 
 WebBrowser.maybeCompleteAuthSession()
@@ -48,6 +49,8 @@ export function AuthContextProvider({children}: AuthContextProvider){
         }
     
     }
+
+    
 
     async function signInWithGoogle(access_token: string){
 

@@ -102,7 +102,7 @@ export async function poolRoutes(fastify:FastifyInstance){
       
           if (pool.participants.length > 0) {
             return reply.status(400).send({
-              message: 'You are already a join this pool.'
+              message: "You're already a join this pool."
             })
           }
 
